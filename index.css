@@ -1,0 +1,98 @@
+#update {
+    display: none;
+}
+h2{
+    width: 60em;
+    margin: auto;
+    margin-top: 5em;
+    margin-bottom: 3em;
+}
+.row{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* height: 10em; */
+    margin-left: 12em;
+    width: 80em;
+    /* border: 2px solid red; */
+
+}
+.row input{
+
+    width: 40em;
+    height: 2.5em;
+    margin-top: .5em;
+    border-color: gray;
+    border-radius: 0.5em;
+    
+
+}
+.searchBar input{
+    margin-left: 14em;
+    margin-top: 5em;
+    width: 90em;
+    height: 3em;
+    border: 2px solid gray;
+    border-radius: 0.5em; 
+}
+.form-group{
+    margin-top: 1em;
+}
+.addData{
+    border: none;
+    outline: none;
+    color: white;
+    width: 7em;
+    height: 2em;
+    border-radius: .8em;
+    margin-top: 2em;
+    font-size: 17px;
+    background-color:#008000;
+}
+.updateData{
+    border: none;
+    outline: none;
+    color: white;
+    width: 7em;
+    height: 2em;
+    border-radius: .8em;
+    margin-top: 2em;
+    font-size: 17px;
+    background-color:#00BFFF;
+
+}
+table, th, td {
+    border: 1px solid black;
+  }
+table {
+    border-collapse: collapse;
+    margin-left: 12em;
+    margin-top: 5em;
+}
+.image-of-product{
+    height: 3em;
+}
+.delete{
+    border: none;
+    outline: none;
+    background-color: #d9534f;
+    color: white;
+    height: 2em;
+    width: 5em;
+    font-size: 15px;
+    margin-left: 1em;
+    
+}
+.edit{
+    border: none;
+    outline: none;
+    background-color: #f0ad4e;
+    color: white;
+    height: 2em;
+    width: 5em;
+    font-size: 15px;
+    margin-left: 1em;
+    
+}
+/* Create Product Management system where product contains following attributes. ProductId ProductName Image Price Description This application should allow user to create new product,
+update existing product and user should be able to filter product by product id and able to sort it by productId,
+Product Name and Price. Apply proper validation wherever its applicable. Use localStorage for storing product and routing for view/edit product. */

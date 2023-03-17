@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>CRUD Application</h2>
+
+
+        <div class="row">
+
+            <div class="form-group">
+                <label for="ProductId"> ProductId</label><br>
+                <input type="text" name="ProductId" class="form-control" id="ProductId" placeholder="Enter ProductId">
+            </div>
+            <div class="form-group">
+                <label for="ProductName"> ProductName</label><br>
+                <input type="text" name="ProductName" class="form-control" id="ProductName"
+                    placeholder="Enter ProductName">
+            </div>
+
+            <div class="form-group">
+                <label for="Price">Price</label><br>
+                <input type="text" name="Price" class="form-control" id="Price" placeholder="Enter Price">
+            </div>
+            <div class="form-group">
+                <label for="Image" onchange="readURL(this);">Image</label><br>
+                <input type="file" name="Image" class="form-control" id="Image" placeholder="Enter Image">
+            </div>
+            <div class="col-lg-12 mt-5">
+                <button class="addData" id="submit" onclick="addData()"> Add Data</button>
+                <button class="updateData" id="update" onclick="updateData()">Update Data</button>
+            </div>
+        </div>
+
+        <div class="searchBar">
+            <input type="text" id="myInput" placeholder=" Search the Product by ProductId....." onkeyup="searchfun()">
+        </div>
+
+        <div class="sortData">
+            <input type="text" id="sortInput" placeholder=" Sort Data">
+            <button onclick="sortData()">Sort</button>
+        </div>
+
+
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>ProductId</th>
+                    <th>ProductName</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+    <script src="index.js"></script>
+    <!-- <script src="update.js"></script> -->
+</body>
+
+</html>
