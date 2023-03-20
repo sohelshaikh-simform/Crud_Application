@@ -7,9 +7,7 @@ h2{
     margin-top: 2em;
     margin-bottom: 3em;
 }
-body{
-    /* background-image: linear-gradient(#EE9CA7,#FFDDE1); */
-}
+
 .container{
     display: flex;
     margin-left: 20em;
@@ -22,14 +20,6 @@ body{
 
     display: flex;
     flex-direction: column;
-    
-    /* display: grid;
-    grid-template-columns: repeat(2,1fr);
-    height: 10em;
-    margin-left: 12em;
-    width: 80em;
-    border: 2px solid red; */
-
 }
 .row input{
     border: none;
@@ -165,6 +155,3 @@ table{
     margin-right: 1em;
     
 }
-/* Create Product Management system where product contains following attributes. ProductId ProductName Image Price Description This application should allow user to create new product,
-update existing product and user should be able to filter product by product id and able to sort it by productId,
-Product Name and Price. Apply proper validation wherever its applicable. Use localStorage for storing product and routing for view/edit product. */
