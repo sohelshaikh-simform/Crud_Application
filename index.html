@@ -10,10 +10,10 @@
 </head>
 
 <body>
+    <h2>CRUD Application</h2>
     <div class="container">
-        <h2>CRUD Application</h2>
 
-
+        <img src="images/front.jpg" alt="">
         <div class="row">
 
             <div class="form-group">
@@ -31,41 +31,46 @@
                 <input type="text" name="Price" class="form-control" id="Price" placeholder="Enter Price">
             </div>
             <div class="form-group">
+                <label for="Price">Description</label><br>
+                <input type="text" name="Description" class="form-control" id="Description" placeholder="Enter Description">
+            </div>
+            <div class="form-group">
                 <label for="Image" onchange="readURL(this);">Image</label><br>
                 <input type="file" name="Image" class="form-control" id="Image" placeholder="Enter Image">
             </div>
-            <div class="col-lg-12 mt-5">
+            <div class="form-group">
                 <button class="addData" id="submit" onclick="addData()"> Add Data</button>
                 <button class="updateData" id="update" onclick="updateData()">Update Data</button>
             </div>
         </div>
 
-        <div class="searchBar">
-            <input type="text" id="myInput" placeholder=" Search the Product by ProductId....." onkeyup="searchfun()">
-        </div>
 
-        <div class="sortData">
-            <input type="text" id="sortInput" placeholder=" Sort Data">
-            <button onclick="sortData()">Sort</button>
-        </div>
-
-
-        <table id="table">
-            <thead>
-                <tr>
-                    <th>ProductId</th>
-                    <th>ProductName</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-
+        
     </div>
+    <div class="sortData">
+        <input type="text" id="sortInput" placeholder=" Sort Data">
+        <button onclick="sortData()">Sort</button>
+    </div>
+
+    <div class="searchBar">
+        <input type="text" id="myInput" placeholder=" Search the Product by ProductId....." onkeyup="searchfun()">
+    </div>
+
+
+    <table id="table">
+        <thead>
+            <tr>
+                <th>ProductId</th>
+                <th>ProductName</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
     <script src="index.js"></script>
     <!-- <script src="update.js"></script> -->
 </body>

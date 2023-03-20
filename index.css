@@ -4,27 +4,60 @@
 h2{
     width: 60em;
     margin: auto;
-    margin-top: 5em;
+    margin-top: 2em;
     margin-bottom: 3em;
 }
+body{
+    /* background-image: linear-gradient(#EE9CA7,#FFDDE1); */
+}
+.container{
+    display: flex;
+    margin-left: 20em;
+}
+.container img{
+    
+    width: 30em;
+}
 .row{
-    display: grid;
+
+    display: flex;
+    flex-direction: column;
+    
+    /* display: grid;
     grid-template-columns: repeat(2,1fr);
-    /* height: 10em; */
+    height: 10em;
     margin-left: 12em;
     width: 80em;
-    /* border: 2px solid red; */
+    border: 2px solid red; */
 
 }
 .row input{
-
+    border: none;
+    border-bottom: 1px solid gray;
     width: 40em;
     height: 2.5em;
     margin-top: .5em;
     border-color: gray;
-    border-radius: 0.5em;
-    
-
+}
+.sortData input{
+    margin-left: 14em;
+    margin-top: 5em;
+    width: 40em;
+    height: 3em;
+    border: 2px solid gray;
+    border-radius: 0.5em; 
+}
+.sortData button{
+    border: none;
+    outline: none;
+    color: white;
+    width: 7em;
+    height: 2.5em;
+    border-radius: .8em;
+    margin-top: 2em;
+    margin-left: 2em;
+    font-size: 17px;
+    background-color:#5bc0de;
 }
 .searchBar input{
     margin-left: 14em;
@@ -36,6 +69,14 @@ h2{
 }
 .form-group{
     margin-top: 1em;
+}
+table,th,td{
+    border: 1px solid black;
+}
+table{
+    margin-top: 5em;
+    border-collapse: collapse;
+    margin-left: 12em;
 }
 .addData{
     border: none;
@@ -60,18 +101,30 @@ h2{
     background-color:#00BFFF;
 
 }
-table, th, td {
-    border: 1px solid black;
-  }
-table {
-    border-collapse: collapse;
-    margin-left: 12em;
+.cardView{
+    display: flex;
     margin-top: 5em;
+   
 }
-.image-of-product{
-    height: 3em;
+.card{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5em;
+    border-radius: 2em;
+    width: 20em;
+    /* justify-content: center; */
 }
-.delete{
+.card>img{
+    margin-top: -2em;
+ height: 8em;  
+   
+}
+.iconImg{
+    display: flex;
+}
+.view{
     border: none;
     outline: none;
     background-color: #d9534f;
@@ -80,6 +133,23 @@ table {
     width: 5em;
     font-size: 15px;
     margin-left: 1em;
+    border-radius: 0.5em;
+    
+}
+.image-of-product{
+    height: 3em;
+    width: 5em;
+}
+.delete{
+    border: none;
+    outline: none;
+    background-color: #d9534f;
+    color: white;
+    height: 2em;
+    width: 4em;
+    font-size: 15px;
+    margin-left: 1em;
+    border-radius: 0.5em;
     
 }
 .edit{
@@ -88,9 +158,11 @@ table {
     background-color: #f0ad4e;
     color: white;
     height: 2em;
-    width: 5em;
+    width: 4em;
     font-size: 15px;
     margin-left: 1em;
+    border-radius: 0.5em;
+    margin-right: 1em;
     
 }
 /* Create Product Management system where product contains following attributes. ProductId ProductName Image Price Description This application should allow user to create new product,

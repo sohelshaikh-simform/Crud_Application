@@ -1,13 +1,11 @@
-let ProductId = document.getElementById("ProductId").value;
-let ProductName = document.getElementById("ProductName").value;
 let productImage = document.getElementById("Image");
-let Price = document.getElementById("Price").value;
 
 function validForm() {
     let ProductId = document.getElementById("ProductId").value;
     let ProductName = document.getElementById("ProductName").value;
     let productImage = document.getElementById("Image").value;
     let Price = document.getElementById("Price").value;
+    let Description = document.getElementById("Description").value;
     if (ProductId == "") {
         alert("ProductId is Require");
         return false;
@@ -22,6 +20,10 @@ function validForm() {
         return false;
     }
     if (Price == "") {
+        alert("Price is required");
+        return false;
+    }
+    if (Description == "") {
         alert("Price is required");
         return false;
     }
@@ -85,6 +87,7 @@ function addData() {
         var ProductName = document.getElementById("ProductName");
         var productImage = document.getElementById("Image");
         var Price = document.getElementById("Price");
+        var Description = document.getElementById("Description");
         var peopleList = getLocalData();
 
 
@@ -92,17 +95,18 @@ function addData() {
             ProductId: ProductId.value,
             ProductName: ProductName.value,
             Image: imgEncoded,
-            Price: Price.value
+            Price: Price.value,
+            Description: Description.value
         };
         peopleList.push(product)
         localStorage.setItem("peopleList", JSON.stringify(peopleList));
-        console.log("after add", peopleList);
         showData();
-        // console.log(peopleList);
+        console.log(peopleList);
         document.getElementById("ProductId").value = ""
         document.getElementById("ProductName").value = ""
         document.getElementById("Image").value = ""
         document.getElementById("Price").value = ""
+        document.getElementById("Description").value = ""
     }
 }
 
@@ -112,14 +116,19 @@ function showData() {
     var peopleList = getLocalData();
 
     const tableRow = (index, ProductId, ProductName, Image, Price) => {
-        return `<tr>
-                    <td>${ProductId}</td>
-                    <td>${ProductName}</td>
-                    <td><img class="image-of-product" src=${Image}></td>
-                    <td>${Price}</td>
-                    <td> <button onclick="deleteData(${index})" class="delete">Delete</button><button onclick="updateData(${index})" class="edit">Edit</button>
-                    </td>
-                </tr>`;
+        let p = '?id=' + ProductId;
+        return `    
+                    <tr>
+                        <td>${ProductId}</td>
+                        <td>${ProductName}</td>
+                        <td><img class="image-of-product" src=${Image}></td>
+                        <td>${Price}</td>
+                        <td><div class="iconImg">
+                            <a href='view.html${p}' target="_blank"><image src="images/eye.png" onclick="veiwFuc(${index})" class="view"></a>
+                            <image src="images/edit.png" onclick="updateData(${index})" class="edit">
+                            <image src="images/delete.png" onclick="deleteData(${index})" class="delete">
+                         </div></td>
+                        </tr>`;
     };
     var html = "";
     peopleList.forEach((element, index) => {
@@ -139,18 +148,7 @@ function deleteData(index) {
 }
 
 // To UpdateData
-function sort() {
-    var peopleList = getLocalData();
 
-    const pairs = Object.entries(peopleList)
-        .map((ProductId) => ({
-            key: parseInt(ProductId),
-        }))
-        .sort(({ key: keyA }, { key: keyB }) => keyA - keyB);
-
-    console.log(pairs);
-    showData();
-}
 function updateData(index) {
     document.getElementById("submit").style.display = "none";
     document.getElementById("update").style.display = "block";
@@ -159,6 +157,7 @@ function updateData(index) {
     document.getElementById("ProductId").value = peopleList[index].ProductId;
     document.getElementById("ProductName").value = peopleList[index].ProductName;
     document.getElementById("Price").value = peopleList[index].Price;
+    document.getElementById("Description").value = peopleList[index].Description;
     // document.getElementById("Image").src = peopleList[index].Image;
 
     document.querySelector("#update").onclick = function () {
@@ -168,6 +167,7 @@ function updateData(index) {
             peopleList[index].ProductName = document.getElementById("ProductName").value;
             peopleList[index].Image = imgEncoded;
             peopleList[index].Price = document.getElementById("Price").value;
+            peopleList[index].Description = document.getElementById("Description").value;
 
             localStorage.setItem("peopleList", JSON.stringify(peopleList));
             showData();
@@ -175,6 +175,7 @@ function updateData(index) {
             document.getElementById("ProductName").value = ""
             document.getElementById("Image").value = ""
             document.getElementById("Price").value = ""
+            document.getElementById("Description").value = ""
 
             document.getElementById("submit").style.display = "block";
             document.getElementById("update").style.display = "none";
