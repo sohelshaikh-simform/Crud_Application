@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    border-radius: 0.75rem;
+    border-radius: 0.75em;
     background-color: white;
     width: 40em;
     height: 370px;
@@ -31,25 +31,25 @@
     margin-top: 1.5em;
     margin-left: 1.5em;
     margin-right: 1em;
-    border-radius: 0.75rem;
+    border-radius: 0.75em;
     background-color: rgb(33 150 243);
   }
   
   .info {
     border: none;
-    padding: 1.5rem;
+    padding: 1.5em;
     text-align: center;
   }
   
   .title {
     color: rgb(38 50 56);
     font-weight: 600;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25em;
+    margin-bottom: 0.5em;
   }
   
   .footer {
-    padding: 0.75rem;
+    padding: 0.75em;
     border: 1px solid rgb(236 239 241);
     display: flex;
     align-items: center;
@@ -59,7 +59,7 @@
   
   .tag {
     font-weight: 300;
-    font-size: .75rem;
+    font-size: .75em;
     display: block;
   }
   
@@ -69,10 +69,10 @@
     box-shadow: 2px 2px 8px rgba(33,150,243,.4);
     color: rgb(255 255 255);
     font-weight: 700;
-    font-size: .75rem;
-    padding: 0.75rem 1.5rem;
+    font-size: .75em;
+    padding: 0.75em 1.5em;
     background-color: rgb(33 150 243);
-    border-radius: 0.5rem;
+    border-radius: 0.5em;
     margin-left: 45em;
   }
   
