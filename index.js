@@ -158,13 +158,13 @@ function deleteData(index) {
 function updateData(index) {
     document.getElementById("submit").style.display = "none";
     document.getElementById("update").style.display = "block";
-
     var peopleList = getLocalData();
     document.getElementById("ProductId").value = peopleList[index].ProductId;
     document.getElementById("ProductName").value = peopleList[index].ProductName;
     document.getElementById("Price").value = peopleList[index].Price;
     document.getElementById("Description").value = peopleList[index].Description;
-    // document.getElementById("Image").src = peopleList[index].Image;
+    // document.getElementById("Image") = peopleList[index].Image;
+    deleteData(index)
 
     document.querySelector("#update").onclick = function () {
         // console.log("Updat Call");
