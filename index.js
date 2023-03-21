@@ -1,40 +1,40 @@
 let productImage = document.getElementById("Image");
+let ProductName = document.getElementById("ProductName");
+let ProductId = document.getElementById("ProductId");
+let Price = document.getElementById("Price").value;
+let Description = document.getElementById("Description").value;
+
 function validForm() {
-    let ProductId = document.getElementById("ProductId");
-    let ProductName = document.getElementById("ProductName").value;
-    let productImage = document.getElementById("Image").value;
-    let Price = document.getElementById("Price").value;
-    let Description = document.getElementById("Description").value;
-    
+
     let productsArray = getLocalData();
     productsArray.find((p) => {
-        if (ProductId.value== p.ProductId) {
+        if (ProductId.value == p.ProductId) {
             alert("Product with the same ID already exists. Please enter unique IDs only.");
-            ProductId.value="";
+            ProductId.value = "";
         }
     });
-    if (ProductId.value== "") {
+    if (ProductId.value == "") {
         alert("ProductId is Require");
         return false;
     }
 
-if (ProductName == "") {
-    alert("ProductName is Require");
-    return false;
-}
-if (Price == "") {
-    alert("Price is required");
-    return false;
-}
-if (Description == "") {
-    alert("Price is required");
-    return false;
-}
-if (productImage == "") {
-    alert("ProductImage is Require");
-    return false;
-}
-return true;
+    if (ProductName.value == "") {
+        alert("ProductName is Require");
+        return false;
+    }
+    if (Price.value == "") {
+        alert("Price is required");
+        return false;
+    }
+    if (Description.value == "") {
+        alert("Price is required");
+        return false;
+    }
+    if (productImage.value == "") {
+        alert("ProductImage is Require");
+        return false;
+    }
+    return true;
 }
 //this function encode image file as url (asynchronously) which can be used as src (base64)
 const encodeAsUrl = (file) => {
@@ -190,7 +190,7 @@ function updateData(index) {
     }
 
 }
-
+// To Search the Product By Id
 function searchfun() {
     let item = document.getElementById("myInput").value;
     let myTable = document.getElementById('table');
@@ -209,10 +209,8 @@ function searchfun() {
 
 }
 
+// To Sort the Data By Specific Value
 function sortData(sortValue) {
-    // let sortValue = document.getElementById("sortInput").value
-    // let sortI=sortData.value
-    // console.log(sortI);
     var peopleList = getLocalData();
     function dynamicSort(property) {
         console.log("serchCal");
