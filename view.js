@@ -30,8 +30,8 @@ html += `
                         <p>${product.ProductName}</p>
                     </div>
                     <div class="info">
-                        <p>${product.ProductId}</p>
-                        <p>${product.Description}</p>
+                    <p>ID:${product.ProductId}</p>
+                       <p>Description:${product.Description}</p>
                     </div>
                     <div class="footer">
                     <button type="button" class="action">${product.Price}$</button>

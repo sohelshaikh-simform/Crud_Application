@@ -1,74 +1,77 @@
 #update {
     display: none;
 }
-h2{
+
+h2 {
     width: 60em;
     margin: auto;
     margin-top: 2em;
     margin-bottom: 3em;
 }
 
-.container{
+/* Form And Image Start */
+.container {
     display: flex;
+    width: 56em;
     margin-left: 20em;
+    border: 1px solid black;
+    border-radius: 1em;
 }
-.container img{
-    
+
+.container img {
+    margin-top: 8em;
     width: 30em;
 }
-.row{
 
+.row {
     display: flex;
     flex-direction: column;
+    background-color: #2E4F4F;
+    width: 30em;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
 }
-.row input{
-    border: none;
-    border-bottom: 1px solid gray;
-    width: 40em;
-    height: 2.5em;
-    margin-top: .5em;
-    border-color: gray;
-}
-.sortData input{
-    margin-left: 14em;
-    margin-top: 5em;
-    width: 40em;
-    height: 3em;
-    border: 2px solid gray;
-    border-radius: 0.5em; 
-}
-.sortData button{
-    border: none;
+
+.row input {
     outline: none;
+    border: none;
     color: white;
-    width: 7em;
-    height: 2.5em;
-    border-radius: .8em;
-    margin-top: 2em;
-    margin-left: 2em;
-    font-size: 17px;
-    background-color:#5bc0de;
-}
-.searchBar input{
-    margin-left: 14em;
-    margin-top: 5em;
-    width: 90em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid rgb(223, 218, 218);
+    width: 25em;
     height: 3em;
-    border: 2px solid gray;
-    border-radius: 0.5em; 
+    background-color: #2E4F4F;
+
 }
-.form-group{
+
+.form-group {
+    margin-left: 1em;
     margin-top: 1em;
 }
-table,th,td{
-    border: 1px solid black;
+
+input[type=file] {
+    border: none;
+    margin: none;
 }
-table{
-    margin-top: 5em;
-    border-collapse: collapse;
-    margin-left: 12em;
+
+.row label {
+    color: yellowgreen;
 }
-.addData{
+
+.addData {
+    border: none;
+    outline: none;
+    color: white;
+    width: 7em;
+    height: 2em;
+    border-radius: .8em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 17px;
+    background-color: #008000;
+}
+
+.updateData {
     border: none;
     outline: none;
     color: white;
@@ -77,81 +80,108 @@ table{
     border-radius: .8em;
     margin-top: 2em;
     font-size: 17px;
-    background-color:#008000;
-}
-.updateData{
-    border: none;
-    outline: none;
-    color: white;
-    width: 7em;
-    height: 2em;
-    border-radius: .8em;
-    margin-top: 2em;
-    font-size: 17px;
-    background-color:#00BFFF;
+    background-color: #00BFFF;
 
 }
-.cardView{
+
+/* Form And Image End */
+
+/* Filter and Search  Start*/
+.sortfilter {
     display: flex;
-    margin-top: 5em;
-   
+    margin-left: 8em;
 }
-.card{
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.sortData {
     margin-left: 5em;
-    border-radius: 2em;
-    width: 20em;
-    /* justify-content: center; */
+    margin-top: 1em;
+
 }
-.card>img{
-    margin-top: -2em;
- height: 8em;  
-   
-}
-.iconImg{
-    display: flex;
-}
-.view{
+
+.sortData button {
     border: none;
     outline: none;
-    background-color: #d9534f;
     color: white;
-    height: 2em;
-    width: 5em;
-    font-size: 15px;
+    width: 7em;
+    height: 2.5em;
+    border-radius: .8em;
+    margin-top: 3em;
     margin-left: 1em;
-    border-radius: 0.5em;
-    
+    font-size: 17px;
+    background-color: #5bc0de;
 }
-.image-of-product{
+
+.searchBar input {
+    margin-left: 14em;
+    margin-top: 5em;
+    width: 50em;
+    height: 3em;
+    border: 2px solid gray;
+    border-radius: 0.5em;
+}
+
+/* Filter and Search  End*/
+
+/* Table Start */
+table,th,td {
+    border: 1px solid black;
+}
+
+table {
+    margin-top: 5em;
+    border-collapse: collapse;
+    margin-left: 20em;
+}
+caption{
+    margin-bottom: 1em;
+    font-size: 30px;
+}
+.iconImg {
+    display: flex;
+}
+
+.image-of-product {
     height: 3em;
     width: 5em;
 }
-.delete{
+
+.view {
     border: none;
     outline: none;
     background-color: #d9534f;
     color: white;
     height: 2em;
-    width: 4em;
+    width: 3em;
     font-size: 15px;
     margin-left: 1em;
     border-radius: 0.5em;
     
 }
-.edit{
+
+.delete {
+    border: none;
+    outline: none;
+    background-color: #d9534f;
+    color: white;
+    height: 2em;
+    width: 3em;
+    font-size: 15px;
+    margin-left: 1em;
+    border-radius: 0.5em;
+    
+}
+
+.edit {
     border: none;
     outline: none;
     background-color: #f0ad4e;
     color: white;
     height: 2em;
-    width: 4em;
+    width: 3em;
     font-size: 15px;
     margin-left: 1em;
     border-radius: 0.5em;
     margin-right: 1em;
     
 }
+/* Table End */

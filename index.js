@@ -1,34 +1,40 @@
 let productImage = document.getElementById("Image");
-
 function validForm() {
-    let ProductId = document.getElementById("ProductId").value;
+    let ProductId = document.getElementById("ProductId");
     let ProductName = document.getElementById("ProductName").value;
     let productImage = document.getElementById("Image").value;
     let Price = document.getElementById("Price").value;
     let Description = document.getElementById("Description").value;
-    if (ProductId == "") {
+    
+    let productsArray = getLocalData();
+    productsArray.find((p) => {
+        if (ProductId.value== p.ProductId) {
+            alert("Product with the same ID already exists. Please enter unique IDs only.");
+            ProductId.value="";
+        }
+    });
+    if (ProductId.value== "") {
         alert("ProductId is Require");
         return false;
     }
-    if (productImage == "") {
-        alert("ProductImage is Require");
-        return false;
-    }
 
-    if (ProductName == "") {
-        alert("ProductName is Require");
-        return false;
-    }
-    if (Price == "") {
-        alert("Price is required");
-        return false;
-    }
-    if (Description == "") {
-        alert("Price is required");
-        return false;
-    }
-
-    return true;
+if (ProductName == "") {
+    alert("ProductName is Require");
+    return false;
+}
+if (Price == "") {
+    alert("Price is required");
+    return false;
+}
+if (Description == "") {
+    alert("Price is required");
+    return false;
+}
+if (productImage == "") {
+    alert("ProductImage is Require");
+    return false;
+}
+return true;
 }
 //this function encode image file as url (asynchronously) which can be used as src (base64)
 const encodeAsUrl = (file) => {
@@ -85,7 +91,6 @@ function addData() {
     if (validForm() == true) {
         var ProductId = document.getElementById("ProductId");
         var ProductName = document.getElementById("ProductName");
-        var productImage = document.getElementById("Image");
         var Price = document.getElementById("Price");
         var Description = document.getElementById("Description");
         var peopleList = getLocalData();
@@ -100,6 +105,7 @@ function addData() {
         };
         peopleList.push(product)
         localStorage.setItem("peopleList", JSON.stringify(peopleList));
+        alert("successfully added")
         showData();
         console.log(peopleList);
         document.getElementById("ProductId").value = ""
@@ -203,10 +209,13 @@ function searchfun() {
 
 }
 
-function sortData() {
-    let sortValue = document.getElementById("sortInput").value
+function sortData(sortValue) {
+    // let sortValue = document.getElementById("sortInput").value
+    // let sortI=sortData.value
+    // console.log(sortI);
     var peopleList = getLocalData();
     function dynamicSort(property) {
+        console.log("serchCal");
         return function (a, b) {
             var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
             return result;

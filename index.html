@@ -13,26 +13,28 @@
     <h2>CRUD Application</h2>
     <div class="container">
 
-        <img src="images/front.jpg" alt="">
+        <div class="img">
+             <img src="images/front.jpg" alt="">
+        </div>
         <div class="row">
 
             <div class="form-group">
-                <label for="ProductId"> ProductId</label><br>
-                <input type="text" name="ProductId" class="form-control" id="ProductId" placeholder="Enter ProductId">
+                <label for="ProductId"> Id</label><br>
+                <input type="number" name="ProductId" class="form-control" id="ProductId" placeholder="Enter ProductId">
             </div>
             <div class="form-group">
-                <label for="ProductName"> ProductName</label><br>
+                <label for="ProductName"> Name</label><br>
                 <input type="text" name="ProductName" class="form-control" id="ProductName"
-                    placeholder="Enter ProductName">
+                    placeholder="Add Product ProductName Here">
             </div>
 
             <div class="form-group">
                 <label for="Price">Price</label><br>
-                <input type="text" name="Price" class="form-control" id="Price" placeholder="Enter Price">
+                <input type="text" name="Price" class="form-control" id="Price" placeholder="Add Product Price Here">
             </div>
             <div class="form-group">
                 <label for="Price">Description</label><br>
-                <input type="text" name="Description" class="form-control" id="Description" placeholder="Enter Description">
+                <input type="text" name="Description" class="form-control" id="Description" placeholder="Add Product Description Here">
             </div>
             <div class="form-group">
                 <label for="Image" onchange="readURL(this);">Image</label><br>
@@ -47,17 +49,22 @@
 
         
     </div>
-    <div class="sortData">
-        <input type="text" id="sortInput" placeholder=" Sort Data">
-        <button onclick="sortData()">Sort</button>
-    </div>
+    <div class="sortfilter">
+        <div class="searchBar">
+            <input type="text" id="myInput" placeholder=" Search the Product by ProductId....." onkeyup="searchfun()">
+        </div>
 
-    <div class="searchBar">
-        <input type="text" id="myInput" placeholder=" Search the Product by ProductId....." onkeyup="searchfun()">
+        <div class="sortData">
+            <button onclick="sortData('ProductId')">Id</button>
+            <button onclick="sortData('ProductName')">Name</button>
+            <button onclick="sortData('Price')">Price</button>
+        </div>
+        
     </div>
 
 
     <table id="table">
+        <caption>Product</caption>
         <thead>
             <tr>
                 <th>ProductId</th>
