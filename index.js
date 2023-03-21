@@ -59,10 +59,7 @@ const encodeAsUrl = (file) => {
 var imgEncoded = '';
 const getEncodedImage = async () => {
     try {
-
         imgEncoded = await encodeAsUrl(productImage.files[0]);
-        // console.log(imgEncoded);
-
     }
     catch (err) {
         productImage.value = '';
@@ -95,7 +92,6 @@ function addData() {
         var Description = document.getElementById("Description");
         var peopleList = getLocalData();
 
-
         let product = {
             ProductId: ProductId.value,
             ProductName: ProductName.value,
@@ -107,7 +103,6 @@ function addData() {
         localStorage.setItem("peopleList", JSON.stringify(peopleList));
         alert("successfully added")
         showData();
-        console.log(peopleList);
         document.getElementById("ProductId").value = ""
         document.getElementById("ProductName").value = ""
         document.getElementById("Image").value = ""
@@ -116,7 +111,6 @@ function addData() {
     }
 }
 
-
 //To Show data
 function showData() {
     var peopleList = getLocalData();
@@ -124,26 +118,25 @@ function showData() {
     const tableRow = (index, ProductId, ProductName, Image, Price) => {
         let p = '?id=' + ProductId;
         return `    
-                    <tr>
-                        <td>${ProductId}</td>
-                        <td>${ProductName}</td>
-                        <td><img class="image-of-product" src=${Image}></td>
-                        <td>${Price}</td>
-                        <td><div class="iconImg">
-                            <a href='view.html${p}' target="_blank"><image src="images/eye.png" onclick="veiwFuc(${index})" class="view"></a>
-                            <image src="images/edit.png" onclick="updateData(${index})" class="edit">
-                            <image src="images/delete.png" onclick="deleteData(${index})" class="delete">
-                         </div></td>
-                        </tr>`;
+                        <div class="card">
+                            <img class="image-of-product" src=${Image}>
+                            <h2>Name:${ProductName}</h2>
+                            <h3>Id:${ProductId}</p>
+                            
+                            <div class="iconImg">
+                                <a href='view.html${p}' target="_blank"><image src="images/eye.png" onclick="veiwFuc(${index})" class="view"></a>
+                                <image src="images/edit.png" onclick="updateData(${index})" class="edit">
+                                <image src="images/delete.png" onclick="deleteData(${index})" class="delete">
+                            </div>
+                        </div>`;
     };
     var html = "";
     peopleList.forEach((element, index) => {
         html += tableRow(index, element.ProductId, element.ProductName, element.Image, element.Price);
     });
-    document.querySelector("#table tbody").innerHTML = html;
+    document.querySelector(".carView").innerHTML = html;
 }
 document.onload = showData();
-
 
 // To Delete the data
 function deleteData(index) {
@@ -154,7 +147,6 @@ function deleteData(index) {
 }
 
 // To UpdateData
-
 function updateData(index) {
     document.getElementById("submit").style.display = "none";
     document.getElementById("update").style.display = "block";
@@ -167,7 +159,6 @@ function updateData(index) {
     deleteData(index)
 
     document.querySelector("#update").onclick = function () {
-        // console.log("Updat Call");
         if (validForm() == true) {
             peopleList[index].ProductId = document.getElementById("ProductId").value;
             peopleList[index].ProductName = document.getElementById("ProductName").value;
@@ -192,20 +183,24 @@ function updateData(index) {
 }
 // To Search the Product By Id
 function searchfun() {
-    let item = document.getElementById("myInput").value;
-    let myTable = document.getElementById('table');
-    let tr = myTable.getElementsByTagName('tr');
-    for (i = 0; i < tr.length; i++) {
-        let td = tr[i].getElementsByTagName('td')[0];
-        if (td) {
-            let textValue = td.textContent || td.innerHTML;
-            if (textValue.indexOf(item) > -1) {
-                tr[i].style.display = ""
-            } else {
-                tr[i].style.display = "none";
+    let filter = document.getElementById("myInput").value;
+    let item = document.querySelectorAll(".card");
+    let l = document.getElementsByTagName("h3");
+    try {
+
+        for (i = 0; i <= l.length; i++) {
+            let a = item[i].getElementsByTagName('h3')[0];
+            let value = a.innerHTML || a.innnerText || a.textContent
+            if (value.indexOf(filter) > -1) {
+                item[i].style.display = ""
+
+            }
+            else {
+                item[i].style.display = "none"
             }
         }
     }
+    catch { }
 
 }
 
@@ -213,7 +208,6 @@ function searchfun() {
 function sortData(sortValue) {
     var peopleList = getLocalData();
     function dynamicSort(property) {
-        console.log("serchCal");
         return function (a, b) {
             var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
             return result;
