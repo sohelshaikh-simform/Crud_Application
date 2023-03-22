@@ -40,7 +40,7 @@ function validForm() {
 const encodeAsUrl = (file) => {
     return new Promise(function (resolve, reject) {
         const reader = new FileReader();
-        if (file.type == "image/png" || file.type == "image/jpeg" || file.type == "image/webp") {
+        if (file) {
             reader.readAsDataURL(file);
             reader.onloadend = () => {
                 resolve(reader.result);
@@ -90,12 +90,14 @@ function addData() {
         var ProductName = document.getElementById("ProductName");
         var Price = document.getElementById("Price");
         var Description = document.getElementById("Description");
+        var Image = document.getElementById("Image");
         var peopleList = getLocalData();
 
         let product = {
             ProductId: ProductId.value,
             ProductName: ProductName.value,
             Image: imgEncoded,
+            ImageName:Image.files[0].name,
             Price: Price.value,
             Description: Description.value
         };
@@ -146,6 +148,13 @@ function deleteData(index) {
     showData();
 }
 
+
+
+
+
+
+
+
 // To UpdateData
 function updateData(index) {
     document.getElementById("submit").style.display = "none";
@@ -155,8 +164,35 @@ function updateData(index) {
     document.getElementById("ProductName").value = peopleList[index].ProductName;
     document.getElementById("Price").value = peopleList[index].Price;
     document.getElementById("Description").value = peopleList[index].Description;
-    // document.getElementById("Image") = peopleList[index].Image;
     deleteData(index)
+
+    let b = dataURItoBlob(peopleList[index].Image);
+    //Create a file object with with that blob object and stored file name    
+    let file = new File([b],peopleList[index].ImageName);
+    //create datatransfer object    
+    let transferObj = new DataTransfer();
+    transferObj.items.add(file);
+    //add file to it    
+    //assign datatransfer object to form    
+    document.getElementById("Image").files = transferObj.files;
+    getEncodedImage();
+
+    //function to convert URL to blob object
+    function dataURItoBlob(dataURI) {
+        // convert base64 to raw binary data held in a string    
+        // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this    
+        var byteString = atob(dataURI.split(',')[1]);
+        // separate out the mime component    
+        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+        // write the bytes of the string to an ArrayBuffer    
+        var ab = new ArrayBuffer(byteString.length);
+        var ia = new Uint8Array(ab);
+        for (var i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
+        return new Blob([ab], { type: mimeString });
+    }
+
 
     document.querySelector("#update").onclick = function () {
         if (validForm() == true) {

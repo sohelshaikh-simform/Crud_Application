@@ -2,8 +2,10 @@
     display: none;
 }
 
+body{
+    width: 90%;
+}
 h1 {
-    width: 60em;
     margin: auto;
     margin-top: 2em;
     margin-left: 10em;
