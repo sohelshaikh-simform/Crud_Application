@@ -181,7 +181,7 @@ function searchfun() {
     let filter = document.getElementById("myInput").value;
     let productList=getLocalData();
     productData=productList.filter((element)=>{      
-            if(element.ProductId==filter || element.ProductName.includes(filter) || element.Price.includes(filter) ){
+            if(String(element.ProductId).includes(filter) || element.ProductName.includes(filter) || String(element.Price).includes((filter)) ){
                 return element;
             }
     })
