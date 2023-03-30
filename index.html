@@ -14,43 +14,43 @@
     <div class="container">
 
         <div class="img">
-             <img src="images/front.jpg" alt="">
+            <img src="images/front.jpg" alt="">
         </div>
         <div class="row">
-
-            <div class="form-group">
-                <label for="ProductId"> Id</label><br>
-                <input type="number" name="ProductId" class="form-control" id="ProductId" placeholder="Enter ProductId">
-            </div>
-            <div class="form-group">
-                <label for="ProductName"> Name</label><br>
-                <input type="text" name="ProductName" class="form-control" id="ProductName"
-                    placeholder="Add Product ProductName Here">
-            </div>
-            <div class="form-group">
-                <label for="Price">Price</label><br>
-                <input type="text" name="Price" class="form-control" id="Price" placeholder="Add Product Price Here">
-            </div>
-            <div class="form-group">
-                <label for="Price">Description</label><br>
-                <input type="text" name="Description" class="form-control" id="Description" placeholder="Add Product Description Here">
-            </div>
-            <div class="form-group">
-                <label for="Image" onchange="readURL(this);">Image</label><br>
-                <input type="file" name="Image" class="form-control" id="Image" placeholder="Enter Image">
-            </div>
-            <div class="form-group">
-                <button class="addData" id="submit" onclick="addData()"> Add Data</button>
-                <button class="updateData" id="update" onclick="updateData()">Update Data</button>
-            </div>
+            <form action="">
+                <div class="form-group">
+                    <label for="ProductName"> Name</label><br>
+                    <input type="text" name="ProductName" class="form-control" id="ProductName"
+                        placeholder="Add Product Name Here" required>
+                </div>
+                <div class="form-group">
+                    <label for="Price">Price</label><br>
+                    <input type="text" name="Price" class="form-control" id="Price" placeholder="Add Product Price Here"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="Price">Description</label><br>
+                    <input type="text" name="Description" class="form-control" id="Description"
+                        placeholder="Add Product Description Here" required>
+                </div>
+                <div class="form-group">
+                    <label for="Image" onchange="readURL(this);">Image</label><br>
+                    <input type="file" name="Image" class="form-control" id="Image" placeholder="Enter Image" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add Data" class="addData" id="submit" onclick="addData()">
+                    <input type="submit" " value="Update Data" class="updateData" id="update" onclick="updateData()">
+                </div>
+            </form>
 
         </div>
-        
+
     </div>
     <div class="sortfilter">
 
         <div class="searchBar">
-            <input type="text" id="myInput" placeholder=" Search the Product by ProductId....." onkeyup="searchfun()">
+            <input type="text" id="myInput" placeholder=" Search the Product ....." >
+            <button onclick="searchfun()">Search</button>
         </div>
 
         <div class="sortData">
@@ -58,11 +58,11 @@
             <button onclick="sortData('ProductName')">Name</button>
             <button onclick="sortData('Price')">Price</button>
         </div>
-        
+
     </div>
 
-<!-- c -->
-<h2 class="products">Products</h2>
+    <!-- c -->
+    <h2 class="products">Products</h2>
     <div class="carView">
     </div>
     <script src="index.js"></script>

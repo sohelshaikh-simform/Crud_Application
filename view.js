@@ -1,12 +1,12 @@
 function getLocalData() {
-    var peopleList;
-    if (localStorage.getItem("peopleList") == null) {
-        peopleList = [];
+    var productList;
+    if (localStorage.getItem("productList") == null) {
+        productList = [];
     }
     else {
-        peopleList = JSON.parse(localStorage.getItem("peopleList"));
+        productList = JSON.parse(localStorage.getItem("productList"));
     }
-    return peopleList;
+    return productList;
 }
 
 
@@ -27,14 +27,14 @@ let html = ""
 html += `
                 <div class="card">
                     <div class="header">
-                        <p>${product.ProductName}</p>
+                        <p style="text-transform:capitalize;">${product.ProductName}</p>
                     </div>
                     <div class="info">
                     <p>ID: ${product.ProductId}</p>
                        <p>Description: ${product.Description}</p>
                     </div>
                     <div class="footer">
-                    <button type="button" class="action">${product.Price}$</button>
+                    <button type="button" class="action">${product.Price} $</button>
                     </div>
                     </div>            
                     

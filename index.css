@@ -9,7 +9,8 @@ h1 {
     margin: auto;
     margin-top: 2em;
     margin-left: 10em;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
+    color: yellowgreen;
 }
 
 /* Form And Image Start */
@@ -22,7 +23,7 @@ h1 {
 }
 
 .container img {
-    margin-top: 8em;
+    margin-top: 5em;
     width: 30em;
 }
 
@@ -61,7 +62,7 @@ input[type=file] {
     color: yellowgreen;
 }
 
-.addData {
+.row .addData {
     border: none;
     outline: none;
     color: white;
@@ -73,8 +74,16 @@ input[type=file] {
     font-size: 17px;
     background-color: #008000;
 }
+.row .addData:hover{
+    box-shadow: inset 5px 5px 6px #183A1D;
 
-.updateData {
+}
+.row .updateData:hover{
+    box-shadow: inset 5px 5px 6px #183A1D;
+
+}
+
+.row .updateData {
     border: none;
     outline: none;
     color: white;
@@ -84,7 +93,7 @@ input[type=file] {
     margin-top: 1em;
     margin-bottom: 1em;
     font-size: 17px;
-    background-color: #539165;
+    background-color: #008000;
 
 }
 
@@ -123,14 +132,27 @@ input[type=file] {
     border: 2px solid gray;
     border-radius: 0.5em;
 }
+.searchBar button{
+    border: none;
+    outline: none;
+    color: white;
+    width: 7em;
+    height: 2.5em;
+    border-radius: .8em;
+    margin-top: 3em;
+    margin-left: 1em;
+    font-size: 17px;
+    background-color: #9DC08B;
+}
 
 /* Filter and Search  End*/
 
 /* Card Start */
 .products{
-    margin-left: 20em;
-    margin-top: 3em;
+    margin-left: 28em;
+    margin-top: 2em;
     font-size: 30px;
+    color: yellowgreen;
 }
 .iconImg {
     display: flex;
@@ -179,7 +201,7 @@ input[type=file] {
     margin-top: 5em;
     margin-left: 6em;
     flex-wrap: wrap;
-    width: 90em;
+    width: 100em;
     
 }
 .card{
@@ -198,7 +220,6 @@ input[type=file] {
     width: 5em;
     margin-left: 3.3em;
     margin-top: -2em;
-    /* border: 2px solid #3F497F; */
     border-radius: 5em;
 }
 h2{
